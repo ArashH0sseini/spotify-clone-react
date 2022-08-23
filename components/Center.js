@@ -19,9 +19,6 @@ function Center() {
 
     useEffect(() => {
         setColor(shuffle(colors).pop())
-        return () => {
-            
-        };
     }, []);
   return (
     <div className='flex-grow text-white'>
