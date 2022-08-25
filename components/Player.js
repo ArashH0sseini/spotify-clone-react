@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { SwitchHorizontalIcon } from '@heroicons/react/outline'
+import { PlayIcon, RewindIcon, PauseIcon, ReplyIcon, FastForwardIcon } from '@heroicons/react/solid'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
@@ -29,6 +31,18 @@ function Player() {
         }
     }
 
+    const handlePlayPause = () => {
+        // spotifyApi.getMyCurrentPlaybackState().then((data)=>{
+        //     if(data.body.is_playing){
+        //         spotifyApi.pause();
+        //         setIsPlaying(false)
+        //     }else{
+        //         spotifyApi.play();
+        //         setIsPlaying(true)
+        //     }
+        // })
+    }
+
     useEffect(() => {
         if (spotifyApi.getAccessToken() && !currentTrackId) {
             fetchCurrectSong();
@@ -47,6 +61,20 @@ function Player() {
                     </h3>
                     <p>{songInfo?.artists?.[0]?.name}</p>
                 </div>
+            </div>
+
+            {/* Center */}
+            <div className='flex items-center justify-evenly'>
+                <SwitchHorizontalIcon className='button' />
+                <RewindIcon className='button' />
+                {isPlaying ? (
+                    <PauseIcon onClick={handlePlayPause} className="w-10 h-10 button" />
+                ) : (
+                    <PlayIcon onClick={handlePlayPause} className="w-10 h-10 button" />
+                )}
+
+                <FastForwardIcon className='button' />
+                <ReplyIcon className='button' />
             </div>
         </div>
     )
