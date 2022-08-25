@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { SwitchHorizontalIcon } from '@heroicons/react/outline'
-import { PlayIcon, RewindIcon, PauseIcon, ReplyIcon, FastForwardIcon } from '@heroicons/react/solid'
+import { SwitchHorizontalIcon, VolumeUpIcon as VolumeDownIcon } from '@heroicons/react/outline'
+import { PlayIcon, RewindIcon, PauseIcon, ReplyIcon, FastForwardIcon, VolumeUpIcon } from '@heroicons/react/solid'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
@@ -75,6 +75,14 @@ function Player() {
 
                 <FastForwardIcon className='button' />
                 <ReplyIcon className='button' />
+            </div>
+            {/* right */}
+            <div className='flex items-end justify-end p-5 pr-5 space-x-3 md:space-x-4'>
+                <VolumeDownIcon className='button' />
+                <input className='w-14 md:w-28' 
+                value={volume}
+                 type="range" min={0} max={100} />
+                <VolumeUpIcon className='button' />
             </div>
         </div>
     )
