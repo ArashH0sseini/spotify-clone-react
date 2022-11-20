@@ -11,8 +11,8 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "lodash": "^4.17.21",
-    "next": "12.2.5",
-    "next-auth": "^4.10.3",
+    "next": "12.0",
+    "next-auth": "^0.0.0-pr.4926.25a4fa9f",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "^0.7.5",

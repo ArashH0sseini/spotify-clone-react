@@ -8,6 +8,7 @@ import { playlistIdState, playlistState } from '../atoms/playlistAtom'
 import useSpotify from '../hooks/useSpotify'
 import Songs from './Songs'
 
+
 const colors = [
     "from-indigo-500",
     "from-blue-500",
